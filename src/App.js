@@ -15,7 +15,8 @@ const { Title } = Typography;
 function App() {
   return (
     <div className="App">
-      <header className="App-header" style={{ backgroundImage: `url(${dcswamp})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <header className="App-header">
+      <div className="background-image" style={{ backgroundImage: `url(${dcswamp})`, backgroundSize: 'cover', backgroundPosition: 'center', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}></div>
         <div className="photo-section">
           <img src={kehoe} alt="Mike Kehoe" className="photo" style={{ width: 600 }} />
         </div>
@@ -40,7 +41,7 @@ function App() {
         </div>
         <div className="slide-in-text">
           <Title level={3} style={{ fontFamily: 'Roboto', color: '#333', textAlign: 'center', marginTop: '20px', fontSize: '28px', fontWeight: 'bold', textTransform: 'uppercase' }}>
-            ... and Campaign Retainer Payments dating back to March 20th, 2023
+            ... with Campaign Retainer Payments dating back to March 20th, 2023
           </Title>
         </div>
         <div className="payment-boxes">
