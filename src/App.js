@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Typography } from 'antd';
 import './App.css';
 import kehoe from './images/KEHOE AND ROE - SWAMP 2.png';
 import dcswamp from './images/DC Swamp.png'
@@ -20,8 +19,8 @@ import retainer11 from './images/AXiom Payment 122523.png';
 import retainer12 from './images/AXiom Payment 010324.png';
 import retainer13 from './images/AXiom Payment 020524.png';
 import retainer14 from './images/AXiom Payment 031224.png';
+import amdreampacads from './images/American Dream PAC Ad Buy Numbers.png'
 
-const { Title } = Typography;
 
 const payments = [
   { date: '1/30/2024', type: 'Media Buy', paid: '74,000.00', image: pymt1 },
@@ -132,6 +131,13 @@ function App() {
               <img src={image.src} alt={image.alt} />
             </div>
           ))}
+        </div>
+        <div className="slide-in-text">
+          <div style={{ fontFamily: 'Roboto', color: '#333', textAlign: 'center', marginTop: '20px', fontSize: '28px', fontWeight: 'bold', textTransform: 'uppercase' }}>
+            That's not all<br />Kehoe still owes Roe more than $700,000...<br /><br />
+            <img src={amdreampacads} style={{ maxWidth: '100%', height: 'auto' }} />
+            <br /><br />How much money is enough, Jeff?
+          </div>
         </div>
       </header>
     </div>
