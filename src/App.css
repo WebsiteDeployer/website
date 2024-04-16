@@ -23,8 +23,8 @@ h1 {
 .slide-in-text {
   max-width: 600px;
   padding: 20px;
-  background-color: #b50000; /* Dark red background */
-  color: #fff;
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333; /* Dark gray text */
   font-size: 18px;
   font-family: Arial, sans-serif;
   border-radius: 10px;
@@ -73,4 +73,91 @@ h1 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.photo-section {
+  display: flex;
+}
+
+.photo {
+  width: 200px; /* Adjust the width as needed */
+  height: auto;
+  margin: 0 10px; /* Add some margin between the images */
+}
+
+.slide-in-text {
+  margin-top: 20px; /* Add margin for separation from the images */
+}
+
+.payment-boxes {
+  display: flex;
+  justify-content: space-around; /* Align the payment boxes horizontally */
+  margin-top: 20px; /* Add margin for separation from the images */
+}
+
+.payment-box {
+  width: 200px; /* Adjust the width as needed */
+  margin: 0 10px; /* Add some margin between the payment boxes */
+}
+.photo-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.photo-wrapper:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  filter: blur(10px);
+}
+
+.photo {
+  position: relative;
+}
+
+.payment-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.payment-box {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blur-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./images/Kehoe Mcconnell Roe B&W.png'); /* Update the path if necessary */
+  background-size: cover;
+  filter: blur(8px); /* Adjust blur level as needed */
+  z-index: -1; /* Put the blur behind the content */
+}
+
+.photo-section {
+  position: relative; /* Needed to stack above the blur background */
+  z-index: 1; /* Ensure the image is above the blurred background */
 }
