@@ -161,3 +161,30 @@ h1 {
   position: relative; /* Needed to stack above the blur background */
   z-index: 1; /* Ensure the image is above the blurred background */
 }
+.App-header {
+  /* Assuming you want the image to cover the entire header */
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Add other styles like height as needed */
+}
+
+.overlay {
+  /* Add an overlay if the text needs more contrast */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Or any other color and opacity */
+  z-index: 1; /* To make sure it's above the background and below the content */
+}
+
+/* Add a z-index to the content that needs to be on top of the overlay */
+.photo-section, .slide-in-text, .payment-boxes {
+  position: relative;
+  z-index: 2;
+}
+
+/* Update other styles as needed */
