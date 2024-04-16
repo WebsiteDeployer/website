@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography } from 'antd';
 import './App.css';
 import kehoe from './images/KEHOE AND ROE - SWAMP 2.png';
@@ -23,7 +23,83 @@ import retainer14 from './images/AXiom Payment 031224.png';
 
 const { Title } = Typography;
 
+const payments = [
+  { date: '1/30/2024', type: 'Media Buy', paid: '74,000.00', image: pymt1 },
+  { date: '2/12/2024', type: 'Media Buy', paid: '72,750.00', image: pymt2 },
+  { date: '2/21/2024', type: 'Media Buy', paid: '115,713.00', image: pymt3 },
+  { date: '3/11/2024', type: 'Media Buy', paid: '161,875.00', image: pymt4 },
+];
+
+const retainerImages = [
+  { src: retainer1 },
+  { src: retainer2 },
+  { src: retainer4 },
+  { src: retainer5 },
+  { src: retainer6 },
+  { src: retainer7 },
+  { src: retainer8 },
+  { src: retainer9 },
+  { src: retainer10 },
+  { src: retainer11 },
+  { src: retainer12 },
+  { src: retainer13 },
+  { src: retainer14 }
+];
+
+
+function PaymentTable() {
+  const [visibleDisclosure, setVisibleDisclosure] = useState(null);
+
+  const toggleDisclosure = (index) => {
+    setVisibleDisclosure(visibleDisclosure === index ? null : index);
+  };
+
+  return (
+    <div className="payment-info">
+      <table className="payment-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Transaction</th>
+            <th>Amount Paid</th>
+          </tr>
+        </thead>
+        <tbody>
+          {payments.map((payment, index) => (
+            <tr key={index}>
+              <td>{payment.date}</td>
+              <td>{payment.type}</td>
+              <td>
+                ${payment.paid}
+                <sup onClick={() => toggleDisclosure(index)} className="citation">
+                  [{index + 1}]
+                </sup>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {payments.map((payment, index) => (
+        visibleDisclosure === index && (
+          <div key={index} className="disclosure">
+            <img src={payment.image} alt={`Disclosure ${index + 1}`} />
+          </div>
+        )
+      ))}
+      <div className="summary">
+        All transactions are for AX Media, 800 W 47th St, Kansas City MO 64112
+      </div>
+    </div>
+  );
+}
+
 function App() {
+  const [visibleDisclosure, setVisibleDisclosure] = useState(null);
+
+  const toggleDisclosure = (index) => {
+    setVisibleDisclosure(visibleDisclosure === index ? null : index);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -31,72 +107,31 @@ function App() {
         <div className="photo-section">
           <img src={kehoe} alt="Mike Kehoe" className="photo" />
           <div className="overlay-text">
-          <Title level={3} className="fadeIn">
-            Missouri Lieutenant Governor Mike Kehoe's
-            <Title level={2} className="fadeIn">$530,000</Title>
-            of payments to Anti-Trump Jeff Roe are concerning...
-          </Title>
+          <span className="fadeIn">
+            MO Governor Candidate Mike Kehoe's<br />
+            <span className="fadeIn">$530,000</span>
+            <br />of payments to Anti-Trump Jeff Roe are concerning...
+          </span>
           </div>
         </div>
-        <div className="payment-boxes">
-          <div className="payment-box">
-            <img src={pymt1} alt="Payment 1" />
-          </div>
-          <div className="payment-box">
-            <img src={pymt2} alt="Payment 2" />
-          </div>
-          <div className="payment-box">
-            <img src={pymt3} alt="Payment 3" />
-          </div>
-          <div className="payment-box">
-            <img src={pymt4} alt="Payment 4" />
-          </div>
-        </div>
+        <br />
+        <PaymentTable />
         <div className="slide-in-text">
-          <Title level={3} style={{ fontFamily: 'Roboto', color: '#333', textAlign: 'center', marginTop: '20px', fontSize: '28px', fontWeight: 'bold', textTransform: 'uppercase' }}>
-            ... with Campaign Retainer Payments dating back to March 20th, 2023
-          </Title>
+          <div style={{ fontFamily: 'Roboto', color: '#333', textAlign: 'center', marginTop: '20px', fontSize: '28px', fontWeight: 'bold', textTransform: 'uppercase' }}>
+            ...with 12 months of payments dating back to March 20th, 2023<br />
+            {retainerImages.map((image, index) => (
+              <sup key={index} onClick={() => toggleDisclosure(index)} className="citation">
+                [{index + 1}]
+              </sup>
+            ))}
+          </div>
         </div>
         <div className="payment-boxes">
-          <div className="payment-box">
-            <img src={retainer1} alt="Payment 1" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer2} alt="Payment 2" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer4} alt="Payment 4" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer5} alt="Payment 5" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer6} alt="Payment 6" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer7} alt="Payment 7" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer8} alt="Payment 8" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer9} alt="Payment 9" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer10} alt="Payment 10" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer11} alt="Payment 11" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer12} alt="Payment 12" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer13} alt="Payment 13" />
-          </div>
-          <div className="payment-box">
-            <img src={retainer14} alt="Payment 14" />
-          </div>
+          {retainerImages.map((image, index) => (
+            <div key={index} className="payment-box" style={{ display: visibleDisclosure === index ? 'block' : 'none' }}>
+              <img src={image.src} alt={image.alt} />
+            </div>
+          ))}
         </div>
       </header>
     </div>

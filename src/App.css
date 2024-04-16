@@ -80,13 +80,6 @@
   }
 }
 
-/* Media queries for responsive adjustments */
-@media (max-width: 768px) {
-  .payment-boxes {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-
 /* Additional global styles */
 body {
   margin: 0;
@@ -119,7 +112,7 @@ body {
   background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for readability */
   color: var(--text-color);
   font-family: var(--font-family);
-  font-size: 1.75em; /* Adjust the font size as necessary */
+  font-size: 2em; /* Adjust the font size as necessary */
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   border-radius: var(--border-radius);
@@ -161,7 +154,85 @@ body {
   animation: sheen 2s infinite;
 }
 
-/* Apply the slide-in animation to both text and images */
 .fadeIn {
   animation: fadeIn var(--slide-in-duration) var(--slide-in-effect);
+}
+
+@media (max-width: 768px) {
+  .slide-in-text,
+  .payment-box {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    max-width: 90%;
+    margin: 1em auto;
+  }
+
+  .payment-boxes {
+    grid-template-columns: 1fr;
+  }
+  
+  .payment-box img {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .sheen-effect {
+    font-size: 1em;
+  }
+
+  .overlay-text {
+    font-size: 1em; /* Smaller font size for mobile screens */
+  }
+
+  .photo-section .overlay-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%), translateY(-20%);
+    text-align: center;
+  }
+}
+.payment-info {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background-color: #333;
+  padding: 20px;
+}
+
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payment-table th,
+.payment-table td {
+  text-align: left;
+  padding: 8px;
+}
+
+.payment-table th {
+  background-color: #555;
+}
+
+.payment-table tr:nth-child(even) {
+  background-color: #474747;
+}
+
+.citation {
+  cursor: pointer;
+  color: #4a90e2;
+  text-decoration: underline;
+}
+
+.disclosure {
+  margin-top: 10px;
+  background-color: #555;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.summary {
+  margin-top: 15px;
+  background-color: #555;
+  padding: 10px;
+  border-radius: 5px;
 }
