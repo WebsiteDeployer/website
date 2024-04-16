@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Typography } from 'antd';
 import './App.css';
 import kehoe from './images/Kehoe Mcconnell Roe B&W.png';
@@ -7,28 +7,17 @@ import pymt1 from './images/AX Media 013024.png'
 import pymt2 from './images/AX Media 021224.png'
 import pymt3 from './images/AX Media 022124.png'
 import pymt4 from './images/AX Media 031124.png'
+import retainer1 from './images/AXiom Payment 031224.png'
+import retainer2 from './images/AXiom Payment 032023.png'
 
 const { Title } = Typography;
 
 function App() {
-  const [photoWidth, setPhotoWidth] = useState(null);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = kehoe; // Use the rectangular image to calculate the width
-    img.onload = () => {
-      const aspectRatio = img.width / img.height;
-      const calculatedWidth = 200 * aspectRatio; // Adjust the multiplier as needed
-      setPhotoWidth(calculatedWidth);
-    };
-  }, []);
-
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" style={{ backgroundImage: `url(${dcswamp})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="photo-section">
-          <img src={kehoe} alt="Mike Kehoe" className="photo" style={{ width: 600 }} onLoad={() => setIsImageLoaded(true)} />
+          <img src={kehoe} alt="Mike Kehoe" className="photo" style={{ width: 600 }} />
         </div>
         <div className="slide-in-text">
           <Title level={3} style={{ fontFamily: 'Roboto', color: '#333', textAlign: 'center', marginTop: '20px', fontSize: '28px', fontWeight: 'bold', textTransform: 'uppercase' }}>
@@ -49,9 +38,20 @@ function App() {
             <img src={pymt4} alt="Payment 4" />
           </div>
         </div>
+        <div className="slide-in-text">
+          <Title level={3} style={{ fontFamily: 'Roboto', color: '#333', textAlign: 'center', marginTop: '20px', fontSize: '28px', fontWeight: 'bold', textTransform: 'uppercase' }}>
+            ... and Campaign Retainer Payments dating back to March 20th, 2023
+          </Title>
+        </div>
+        <div className="payment-boxes">
+          <div className="payment-box">
+            <img src={retainer1} alt="Payment 1" />
+          </div>
+          <div className="payment-box">
+            <img src={retainer2} alt="Payment 2" />
+          </div>
+        </div>
       </header>
-      
-      <img src={dcswamp} alt="DC Swamp" onError={() => alert('Failed to load DC Swamp image')} style={{ display: 'none' }} />
     </div>
   );
 }

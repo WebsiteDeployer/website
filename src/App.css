@@ -39,16 +39,17 @@ h1 {
 }
 
 .payment-box {
-  margin: 20px;
-  padding: 20px;
+  width: 800px; /* Adjust the width as needed */
+  margin: 20px; /* Add margin if necessary */
+  padding: 20px; /* Add padding if necessary */
   background-color: #2c2c2c; /* Dark gray background */
   color: #fff;
   text-align: center;
   border-radius: 10px;
-  max-width: 300px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
+
 
 .payment-box:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -89,16 +90,7 @@ h1 {
   margin-top: 20px; /* Add margin for separation from the images */
 }
 
-.payment-boxes {
-  display: flex;
-  justify-content: space-around; /* Align the payment boxes horizontally */
-  margin-top: 20px; /* Add margin for separation from the images */
-}
 
-.payment-box {
-  width: 200px; /* Adjust the width as needed */
-  margin: 0 10px; /* Add some margin between the payment boxes */
-}
 .photo-wrapper {
   position: relative;
   display: inline-block;
@@ -124,14 +116,10 @@ h1 {
 
 .payment-boxes {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+  gap: 5px;
   align-items: start;
   margin-top: 20px;
-}
-
-.payment-box {
-  animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -161,6 +149,7 @@ h1 {
   position: relative; /* Needed to stack above the blur background */
   z-index: 1; /* Ensure the image is above the blurred background */
 }
+
 .App-header {
   /* Assuming you want the image to cover the entire header */
   position: relative;
@@ -180,11 +169,3 @@ h1 {
   background: rgba(0, 0, 0, 0.5); /* Or any other color and opacity */
   z-index: 1; /* To make sure it's above the background and below the content */
 }
-
-/* Add a z-index to the content that needs to be on top of the overlay */
-.photo-section, .slide-in-text, .payment-boxes {
-  position: relative;
-  z-index: 2;
-}
-
-/* Update other styles as needed */
