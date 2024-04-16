@@ -21,7 +21,7 @@ function App() {
         </div>
         <div className="slide-in-text">
           <Title level={3} style={{ fontFamily: 'Roboto', color: '#333', textAlign: 'center', marginTop: '20px', fontSize: '28px', fontWeight: 'bold', textTransform: 'uppercase' }}>
-            Missouri Lieutenant Governor Mike Kehoe's payments to Axiom Strategies are concerning.
+            Missouri Lieutenant Governor Mike Kehoe's $530,000 of payments to Axiom Strategies are concerning...
           </Title>
         </div>
         <div className="payment-boxes">
