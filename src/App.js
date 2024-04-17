@@ -20,7 +20,7 @@ import retainer12 from './images/AXiom Payment 010324.png';
 import retainer13 from './images/AXiom Payment 020524.png';
 import retainer14 from './images/AXiom Payment 031224.png';
 import amdreampacads from './images/American Dream PAC Ad Buy Numbers.png'
-
+import jeffroebling from './images/jeff-roe-bling.png'
 
 const payments = [
   { date: '1/30/2024', type: 'Media Buy', paid: '74,000.00', image: pymt1 },
@@ -44,7 +44,6 @@ const retainerImages = [
   { src: retainer13 },
   { src: retainer14 }
 ];
-
 
 function PaymentTable() {
   const [visibleDisclosure, setVisibleDisclosure] = useState(null);
@@ -132,6 +131,8 @@ function App() {
             </div>
           ))}
         </div>
+        <img src={jeffroebling} style={{ maxWidth: '100%', height: 'auto' }} />
+
         <div className="slide-in-text">
           <div style={{ fontFamily: 'Roboto', color: '#333', textAlign: 'center', marginTop: '20px', fontSize: '28px', fontWeight: 'bold', textTransform: 'uppercase' }}>
             That's not all - <br />Kehoe still owes Roe more than $700,000 and counting...<br /><br />
