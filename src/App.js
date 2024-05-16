@@ -133,6 +133,7 @@ function App() {
         </div>
         <img src={jeffroebling} style={{ maxWidth: '100%', height: 'auto' }} />
 
+        {/*
         <div className="slide-in-text">
           <div style={{ fontFamily: 'Roboto', color: '#333', textAlign: 'center', marginTop: '20px', fontSize: '28px', fontWeight: 'bold', textTransform: 'uppercase' }}>
             That's not all - <br />Kehoe still owes Roe more than $700,000 and counting...<br /><br />
@@ -140,6 +141,8 @@ function App() {
             <br /><br />How much money is enough, Jeff?
           </div>
         </div>
+        */}
+
       </header>
     </div>
   );
